@@ -26,7 +26,7 @@ for (const asset of [...html.matchAll(/(?:src|href)="(\.\/[^#"]+)/g)].map((match
 }
 
 const externalLinks = [...html.matchAll(/href="(https?:\/\/[^"#]+)/g)];
-const projectLinks = externalLinks.filter(([, href]) => href.includes('/ai-vs-sp500-analysis') || href.includes('/read_my_textbook'));
+const projectLinks = externalLinks.filter(([, href]) => href.includes('/ai-vs-sp500-analysis') || href.includes('/read_my_textbook') || href.includes('/stock-explorer-tut'));
 if (projectLinks.some(([, href]) => !html.includes(`href="${href}" rel="noopener noreferrer"`))) {
   throw new Error('External GitHub project links must declare rel="noopener noreferrer".');
 }
