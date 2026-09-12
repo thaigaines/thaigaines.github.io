@@ -3,16 +3,11 @@
   "version": "1.0.0",
   "homepage": "https://thaigaines.github.io",
   "scripts": {
-    "build": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/tailwind.min.css --minify",
-    "watch": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/tailwind.min.css --watch",
+    "build": "node scripts/review.mjs",
     "start": "http-server .",
     "test": "node scripts/review.mjs",
-    "predeploy": "npm run build",
+    "predeploy": "node scripts/review.mjs",
     "deploy": "gh-pages -d ."
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.13",
-    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
