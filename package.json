@@ -6,6 +6,7 @@
     "build": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/tailwind.min.css --minify",
     "watch": "npx @tailwindcss/cli -i ./css/tailwind.css -o ./css/tailwind.min.css --watch",
     "start": "http-server .",
+    "test": "node scripts/review.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ."
   },
