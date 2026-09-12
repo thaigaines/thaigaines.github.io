@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -29,6 +29,15 @@ const externalLinks = [...html.matchAll(/href="(https?:\/\/[^"#]+)/g)];
 const projectLinks = externalLinks.filter(([, href]) => href.includes('/ai-vs-sp500-analysis') || href.includes('/read_my_textbook') || href.includes('/stock-explorer-tut'));
 if (projectLinks.some(([, href]) => !html.includes(`href="${href}" rel="noopener noreferrer"`))) {
   throw new Error('External GitHub project links must declare rel="noopener noreferrer".');
+}
+
+const localAssets = new Set(
+  [...html.matchAll(/(?:src|href)="(\.\/[^#"]+)"/g)].map(([, asset]) => asset.replaceAll('\\', '/')),
+);
+const imageFiles = readdirSync(resolve(root, 'images'));
+const orphanedImages = imageFiles.filter((file) => !localAssets.has(`./images/${file}`));
+if (orphanedImages.length) {
+  throw new Error(`Orphaned image assets: ${orphanedImages.join(', ')}`);
 }
 
 console.log(`Portfolio review passed: ${ids.length} ids, ${externalLinks.length} external links, local assets present.`);
