@@ -3,7 +3,6 @@
 /* Image treatment: keep the portrait natural; reserve the blue treatment for project visuals. */
 .portrait-frame img{filter:none;mix-blend-mode:normal}
 .portrait-frame{padding:.8rem}
-.timeline-year small{display:block;margin-top:.35rem;color:#8296a8;font:400 .62rem 'DM Mono',monospace;text-transform:none;letter-spacing:0}
 .project-image{position:relative}
 .project-image::after{content:"";position:absolute;inset:0;background:rgba(20,105,145,.3);mix-blend-mode:multiply;pointer-events:none}
 .audio-snapshot{display:flex;align-items:center;justify-content:center;gap:1rem;background:linear-gradient(135deg,#123b59,#1a7890);color:#d7f66a;font:500 .72rem 'DM Mono',monospace;letter-spacing:.08em}
