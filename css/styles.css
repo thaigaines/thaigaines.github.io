@@ -42,3 +42,39 @@ img, video {
     background-color: black;
     color: white;
 }
+
+.hyperlink:focus-visible,
+a:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+#about-text,
+#music > p {
+    max-width: 70rem;
+}
+
+#about img {
+    object-position: center 22%;
+}
+
+#projects > div,
+#connect > div {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+#projects > div:hover,
+#connect > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 18%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
