@@ -7,7 +7,7 @@
     "start": "http-server .",
     "test": "node scripts/review.mjs",
     "predeploy": "node scripts/review.mjs",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d . -s \"**/*\" -s \"!tmp/**\""
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
