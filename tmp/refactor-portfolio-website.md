@@ -40,4 +40,17 @@
 
 - Standardized all project snapshots into the same 16:9 framed panel with contained artwork, so wide notebooks, code screenshots, and square reports share one visual rhythm.
 - Added a global keyboard focus treatment for consistent interaction states.
-- Verification and checkpoint commit are pending.
+- Autoreview passed after the refactor.
+- Live-tested the page in the local browser; the full page retained its hierarchy and all three project snapshots rendered.
+- Checkpoint commit: `68a1b6f Refactor portfolio styling architecture`.
+
+## Step 5 — link consistency guard
+
+- Applied `rel="noopener noreferrer"` consistently to all HTTPS links, including social links in the hero and footer.
+- Updated autoreview to enforce the rule for every external HTTPS link.
+- Autoreview passed and live browser inspection confirmed 6 of 6 HTTPS links are secured.
+- Checkpoint commit: `1180baf Enforce consistent external link metadata`.
+
+## Final verification
+
+- Deployment and remote branch verification are pending.
