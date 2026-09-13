@@ -56,4 +56,12 @@
 - `main` pushed to `origin` at `da54a45` before the final log-only update.
 - `gh-pages` published successfully with `pnpm run deploy`.
 - Published page verified at `https://thaigaines.github.io/?v=1180baf`: 3 project snapshots present, 6 HTTPS links secured, stylesheet loaded, and no browser console errors.
-- Final remote branch push and working-tree check are pending.
+- Final commit `d28154f Record deployment verification` is pushed to `main`; `gh-pages` is published from the same source state.
+- Working tree is clean after the final verification.
+
+## Directory audit
+
+- Audited all directories and source files under the project root, excluding `.git`, `node_modules`, and the progress-log directory itself from the canonical source count.
+- Found four generated `tmp/gh-pages-publish-*` snapshots, each duplicating the deployed `css`, `images`, and `scripts` trees.
+- Verified each snapshot contained only deployment copies, then removed all four exact snapshot directories.
+- Re-audit found one canonical source tree with no duplicate source basenames and no remaining generated publish snapshots.
