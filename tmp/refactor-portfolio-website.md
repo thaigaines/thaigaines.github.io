@@ -53,4 +53,7 @@
 
 ## Final verification
 
-- Deployment and remote branch verification are pending.
+- `main` pushed to `origin` at `da54a45` before the final log-only update.
+- `gh-pages` published successfully with `pnpm run deploy`.
+- Published page verified at `https://thaigaines.github.io/?v=1180baf`: 3 project snapshots present, 6 HTTPS links secured, stylesheet loaded, and no browser console errors.
+- Final remote branch push and working-tree check are pending.
