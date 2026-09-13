@@ -309,6 +309,12 @@ footer a:hover {
   object-fit: cover;
   transition: transform 0.5s;
 }
+.project-image-contained {
+  background: #0b1320;
+}
+.project-image-contained img {
+  object-fit: contain;
+}
 .project-card:hover .project-image img {
   transform: scale(1.03);
 }
