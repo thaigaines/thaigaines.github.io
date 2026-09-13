@@ -1,46 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
-:root {
-  --navy: #08111f;
-  --blue: #10243b;
-  --paper: #f3f6f2;
-  --ink: #102033;
-  --cyan: #7ee7df;
-  --lime: #d7f66a;
-  --line: #dbe3e0;
-  --serif: Georgia, serif;
+@import url("./base.css");
+
+/* Component and section styles live below; responsive overrides remain at the end. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
 }
-* {
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: "Space Grotesk", Arial, sans-serif;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-.skip-link {
-  position: absolute;
-  left: -999px;
-}
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  background: var(--lime);
-  padding: 0.75rem;
-  z-index: 5;
-}
+
 .site-header {
   height: 76px;
   padding: 0 5vw;
@@ -300,20 +266,22 @@ footer a:hover {
   transform: translate(-3px, -3px);
 }
 .project-image {
+  display: grid;
+  place-items: center;
+  min-height: 370px;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+  padding: clamp(0.75rem, 2vw, 1.4rem);
   background: #dce5e3;
 }
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s;
 }
 .project-image-contained {
   background: #0b1320;
-}
-.project-image-contained img {
-  object-fit: contain;
 }
 .project-card:hover .project-image img {
   transform: scale(1.03);
@@ -506,7 +474,8 @@ footer div {
     order: -1;
   }
   .project-image {
-    height: 240px;
+    min-height: 0;
+    height: auto;
   }
   .experience-layout {
     display: block;
