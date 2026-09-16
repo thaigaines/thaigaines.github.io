@@ -32,8 +32,9 @@ Completion means the requested change is implemented, relevant checks pass, and 
 ## Delivery boundary
 
 - Prepare and validate changes locally.
-- After requested changes pass validation, commit and push the relevant changes to GitHub.
-- When a deployment is requested, run `pnpm deploy` to publish the site to `gh-pages`.
+- For clearly scoped code or content changes, commit the files changed for the current task after validation and push directly to `main` on GitHub.
+- Deploy to `gh-pages` automatically after a successful GitHub push by running `pnpm deploy`.
+- Include unrelated pre-existing changes only when the user explicitly asks to catch up files that are out of sync and not yet pushed.
 - Report changes and validation results concisely, separating implemented improvements from suggested follow-ups.
 
 Keep this file short and maintain it as a durable guide: remove stale or duplicated guidance when repository conventions change.
